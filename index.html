@@ -5,6 +5,31 @@
   <meta charset="UTF-8">
   <title>JQuery Practice</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type='text/javascript'>
+    //some default pre init
+    var Countly = Countly || {};
+    Countly.q = Countly.q || [];
+    
+    //provide countly initialization parameters
+    Countly.app_key = '0d6910ccbdf2d6cd34a57fffc3d25a8eb66f1192';
+    Countly.url = 'https://htmlpreview.github.io/?https://github.com/BethHaworth/jQuerykit/blob/master/index.html';
+    
+    Countly.q.push(['track_sessions']);
+    Countly.q.push(['track_pageview']);
+    Countly.q.push(['track_clicks']);
+    Countly.q.push(['track_forms']);
+    Countly.q.push(['collect_from_forms']);
+    
+    //load countly script asynchronously
+    (function() {
+       var cly = document.createElement('script'); cly.type = 'text/javascript';
+       cly.async = true;
+       //enter url of script here
+       cly.src = 'web/sdk/web/countly.min.js';
+       cly.onload = function(){Countly.init()};
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cly, s);
+    })();
+    </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,7 +77,9 @@
 		
 		
 </div>
-	
+  
+
+<noscript><img src='https://htmlpreview.github.io/?https://github.com/BethHaworth/jQuerykit/blob/master/index.html/pixel.png?app_key=0d6910ccbdf2d6cd34a57fffc3d25a8eb66f1192&begin_session=1'/></noscript>
 </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
